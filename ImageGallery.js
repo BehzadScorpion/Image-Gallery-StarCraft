@@ -7,11 +7,14 @@
     var slideNumber = 1;
     var next = $(".arrowNext");
     var previous = $(".arrowPrevious");
-    var intreval = window.setInterval(inrevalAction, 3000);
+    var interval = 4000;
+    var fadeInterval = 1175;
+    var timer = window.setInterval(intervalAction, interval);
+    
 
 
     $(next).click(function () {
-        clearInterval(intreval);
+        clearInterval(timer);
         if (slideNumber < 4) {
             slideNumber++;
             forwardSwitch();
@@ -19,14 +22,14 @@
         else {
             slideNumber = 1;
             $("#4").hide();
-            $("#1").fadeIn("slow");
+            $("#1").fadeIn(fadeInterval);
         }   
-        intreval=window.setInterval(inrevalAction, 3000);
+        timer = window.setInterval(intervalAction, interval);
     });
 
     
     $(previous).click(function () {
-        clearInterval(intreval);
+        clearInterval(timer);
         if (slideNumber > 1) {
             slideNumber--;
             backwardSwitch();
@@ -34,24 +37,24 @@
         else {
             slideNumber = 4;
             $("#1").hide();
-            $("#4").fadeIn("slow");
+            $("#4").fadeIn(fadeInterval);
         }
-        intreval=window.setInterval(inrevalAction, 3000);
+        timer = window.setInterval(intervalAction, interval);
     });
 
     function forwardSwitch() {
         switch (slideNumber) {
             case 2:
                 $("#1").hide();
-                $("#2").fadeIn("slow");
+                $("#2").fadeIn(fadeInterval);
                 break;
             case 3:
                 $("#2").hide();
-                $("#3").fadeIn("slow");
+                $("#3").fadeIn(fadeInterval);
                 break;
             case 4:
                 $("#3").hide();
-                $("#4").fadeIn("slow");
+                $("#4").fadeIn(fadeInterval);
                 break;
         }
 
@@ -62,20 +65,20 @@
 
             case 3:
                 $("#4").hide();
-                $("#3").fadeIn("slow");
+                $("#3").fadeIn(fadeInterval);
                 break;
             case 2:
                 $("#3").hide();
-                $("#2").fadeIn("slow");
+                $("#2").fadeIn(fadeInterval);
                 break;
             case 1:
                 $("#2").hide();
-                $("#1").fadeIn("slow");
+                $("#1").fadeIn(fadeInterval);
                 break;
         }
     }
 
-    function inrevalAction(){
+    function intervalAction(){
    
      if (slideNumber < 4) {
          slideNumber++;
@@ -84,7 +87,7 @@
      else {
          slideNumber = 1;
          $("#4").hide();
-         $("#1").fadeIn("slow");
+         $("#1").fadeIn(fadeInterval);
      }
    
     }
