@@ -96,6 +96,11 @@
     <Content Include="ImageGallery.css" />
     <Content Include="ImageGallery.html" />
     <Content Include="ImageGallery.js" />
+    <Content Include="Images\Background.jpg" />
+    <Content Include="Images\Image1.jpg" />
+    <Content Include="Images\Image2.jpg" />
+    <Content Include="Images\Image3.jpg" />
+    <Content Include="Images\Image4.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
